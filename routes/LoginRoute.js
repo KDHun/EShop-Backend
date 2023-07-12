@@ -77,7 +77,7 @@ router.post("/register", async (req, res) => {
     }
     //Encrypt user password
   } catch (err) {
-    console.log(err);
+    
   }
   // Our register logic ends here
 });
@@ -114,7 +114,7 @@ router.post("/login", async (req, res) => {
       }
       res.status(400).send("Invalid Credentials");
     } catch (err) {
-      console.log(err);
+      
     }
     // Our register logic ends here
   });

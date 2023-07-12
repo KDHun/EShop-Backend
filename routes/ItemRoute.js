@@ -32,7 +32,6 @@ router.post("/Items", auth, async (req, res) => {
 });
 //Get All Data
 router.get("/Item", auth, async (req, res) => {
-  console.log("Get Item");
   try {
     const data = await Item.find();
     res.json(data);
@@ -84,33 +83,12 @@ router.patch("/Items", auth, async (req, res) => {
       res.status(400).json({ message: error.message });
     }
   });
-  
-// router.patch("/Items", auth, async (req, res) => {
-//   let result = [];
 
-//   async function updateItems() {
-//     req.body.forEach(async element => {
-//       const id = element._id;
-//       const updatedData = element.data;
-//       const options = { new: true };
-//       const updatedResult = await Item.findByIdAndUpdate(
-//         id,
-//         updatedData,
-//         options
-//       );
-//       result.push(updatedResult);
-//     });
-//   }
-
-//   await updateItems();
-//   res.send(result);
-// });
 
 //Delete by ID Method
 router.delete("/Item/:id", auth, async (req, res) => {
   try {
-    const id = req.params.id;
-    const data = await Item.findByIdAndDelete(id);
+    const data = await Item.findByIdAndDelete(req.params.id);
     res.send(`Document with ${data.name} has been deleted..`);
   } catch (error) {
     res.status(400).json({ message: error.message });
