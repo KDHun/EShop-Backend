@@ -22,7 +22,9 @@ database.on("error", (error) => {
   console.log(error);
 });
 
-database.once("connected", () => {});
+database.once("connected", () => {
+  console.log("Database Connected");
+});
 
 const app = express();
 
@@ -30,7 +32,9 @@ app.use(express.json());
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => {});
+app.listen(port, () => {
+  console.log(`Server Started at ${port}`);
+});
 app.use(cors());
 app.use("/", CustomerRoutes);
 app.use("/", EmployeeRoute);
