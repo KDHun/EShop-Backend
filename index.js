@@ -41,3 +41,5 @@ app.use("/", EmployeeRoute);
 app.use("/", BillRoute);
 app.use("/", ItemRoute);
 app.use("/", LoginRoute);
+
+module.exports = app;
