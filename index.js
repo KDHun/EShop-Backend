@@ -6,8 +6,7 @@ const BillRoute = require("./routes/BillRoute");
 const express = require("express");
 const mongoose = require("mongoose");
 const mongoString =
-  process.env.DATABASE_URL ||
-  "mongodb+srv://hunkarabhai:Karabhai007@cluster0.08t8mfi.mongodb.net/Database";
+  process.env.DATABASE_URL;
 const cors = require("cors");
 const LoginRoute = require("./routes/LoginRoute");
 

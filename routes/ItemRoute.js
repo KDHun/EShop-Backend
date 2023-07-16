@@ -35,7 +35,6 @@ router.get("/Item", auth, async (req, res) => {
   try {
     const data = await Item.find();
     res.json(data);
-    console.log(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -77,7 +76,7 @@ router.patch("/Items", auth, async (req, res) => {
           result.push(updatedResult);
         })
       );
-      console.log(result);
+    
       res.send(result);
     } catch (error) {
       res.status(400).json({ message: error.message });
